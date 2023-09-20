@@ -1,0 +1,71 @@
+<!-- prettier-ignore -->
+{% extends "layout.html" %}
+
+<!-- prettier-ignore -->
+{% block main %}
+<div class="login-instructions">
+	<div class="text-box rounded">
+		<p>
+			Passwords are hashed. If you would like to use the website without
+			creating a user, login using the guest account.
+		</p>
+		<p>Username: guest</p>
+		<p>Password: guest</p>
+	</div>
+</div>
+
+<div class="mt-4">
+	<!-- Add margin-top to create space between nav and form -->
+	<form
+		action="/register"
+		method="post"
+		class="mx-auto"
+		style="max-width: 300px"
+	>
+		<div class="mb-3">
+			<input
+				autocomplete="off"
+				autofocus
+				class="form-control"
+				name="username"
+				placeholder="Username"
+				type="text"
+			/>
+		</div>
+		<div class="mb-3">
+			<input
+				class="form-control"
+				name="password"
+				placeholder="Password"
+				type="password"
+			/>
+		</div>
+		<div class="mb-3">
+			<input
+				class="form-control"
+				name="confirmation"
+				placeholder="Password (again)"
+				type="password"
+			/>
+		</div>
+		<div class="d-flex justify-content-center mb-3">
+			<button class="btn btn-primary" type="submit">Register</button>
+		</div>
+		<!-- prettier-ignore -->
+		<div class="text-center" id="error-message">
+			{% if login_error1 %} 
+        Error: Enter Username
+      {% endif %}
+      {% if login_error2 %} 
+        Error: Enter Password/s
+      {% endif %}
+      {% if login_error3 %} 
+        Error: Passwords do not match
+      {% endif %}
+      {% if login_error4 %} 
+        Error: Username is taken
+      {% endif %}
+		</div>
+	</form>
+</div>
+{% endblock %}

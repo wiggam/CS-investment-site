@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+/* Reset styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+	font-family: 'Nunito';
+}
+
+.logo {
+	margin-left: 2.8rem;
+}
+
+body {
+	margin: 0; /* Ensure there's no default margin on the body */
+	padding: 0; /* Ensure there's no default padding on the body */
+	background: linear-gradient(to top left, #28b487, #7dd56f);
+	height: 100vh;
+}
+
+.navbar-brand {
+	margin: 0;
+}
+
+.table-top {
+	flex: 50%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0rem 9.5rem;
+}
+
+.search-items {
+	display: flex;
+}
+
+.center-items {
+	flex-grow: 1;
+	text-align: center;
+}
+
+#search-box {
+	margin: 1rem 0.5rem 1rem 0rem;
+	border-radius: 10px;
+	padding: 5px;
+	width: 300px;
+}
+
+#search-button {
+	margin-right: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+#filter-button,
+#add-button {
+	margin: 1rem;
+}
+
+#last-updated-container {
+	display: inline-flex;
+	align-items: center; /* Vertical center alignment */
+	padding: 0.5rem 1rem; /* Add padding for spacing */
+	border-radius: 20px; /* Add border-radius for rounded corners */
+	background-color: grey; /* Grey background color */
+	color: white; /* White text color */
+	margin: 0.8rem;
+}
+
+.custom-alert {
+	background-color: #fff3cd; /* Set your desired background color (yellow) */
+	color: #856404; /* Set your desired text color */
+	font-weight: bold; /* Highlight text by making it bold */
+	text-align: center; /* Center-align text */
+	padding: 10px; /* Add padding for spacing */
+	border: 1px solid #ffeeba; /* Add a border for emphasis (light yellow) */
+	border-radius: 10px; /* Add border-radius for rounded corners */
+}
+
+.custom-alert:empty {
+	display: none; /* Hide the element when it's empty */
+}
+
+tr {
+	vertical-align: middle;
+	text-align: center;
+}
+
+.table-div {
+	flex: 50%;
+	display: flex;
+	flex-direction: column; /* Ensure a vertical layout */
+	overflow-x: auto;
+	max-width: 100%;
+	margin: 0rem 9rem 1rem; /* Outside between border and container */
+	border: 0.25rem solid #e7dada;
+	padding: 0.5rem; /* Inside between border and table */
+	border-radius: 10px;
+	background-color: #b9a8a8;
+
+	max-height: 42rem; /* Set your desired max height */
+	overflow-y: auto; /* Add a vertical scrollbar when content exceeds max height */
+
+	/* Adjust the font size and line height */
+	font-size: 0.82rem; /* Decrease the font size */
+	line-height: 0.78rem; /* Increase the line height */
+}
+
+#table-totals-div {
+	/* Adjust the font size and line height */
+	font-size: 0.9rem; /* Decrease the font size */
+	line-height: 0.9; /* Increase the line height */
+	margin: 0rem 9rem 0rem; /* Outside between border and container */
+}
+
+/* Table styles */
+#table {
+	table-layout: fixed; /* Set a fixed table layout */
+	width: 100%; /* Ensure the table takes up the entire container width */
+	margin: 0; /* Ensure table takes entire div */
+	border-radius: 8px; /* Add rounded corners to the table */
+}
+
+#table-totals {
+	table-layout: fixed; /* Set a fixed table layout */
+	width: 100%; /* Ensure the table takes up the entire container width */
+	margin: 0; /* Ensure table takes entire div */
+	border-radius: 8px; /* Add rounded corners to the table */
+}
+
+#table td {
+	vertical-align: middle;
+	text-align: left;
+	padding: 0.25rem;
+	font-size: 0.85rem;
+}
+
+#table-totals td {
+	vertical-align: middle;
+	text-align: center;
+	padding: 0.5rem;
+}
+
+/* column and data */
+.item-link-column,
+.item-link {
+	width: 10rem; /* Adjust the width as needed */
+	white-space: nowrap; /* Prevent wrapping of content */
+	overflow: auto; /* Hide overflowing content */
+}
+
+.item-name-column,
+.item-name {
+	width: 21rem; /* Adjust the width as needed */
+}
+
+.item-number-column,
+.item-number,
+.item-date-column,
+.item-date {
+	width: 5rem;
+}
+
+.total-return-percent-column,
+.total-return-dollar-column,
+.total-return-dollar,
+.total-return-percent {
+	width: 8.5rem;
+}
+
+.action-column,
+.action-data {
+	width: 5rem;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.action-buttons {
+	display: flex;
+	justify-content: center; /* Horizontally center the buttons */
+	align-items: center; /* Vertically center the buttons */
+	font-size: 15px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.action-buttons.hidden {
+	display: none;
+}
+
+#edit-button,
+#delete-button,
+#save-button,
+#cancel-button {
+	padding: 0.09rem;
+	font-size: 1.05rem;
+}
+
+.btn {
+	width: 7rem;
+}
+
+.sortable {
+	text-decoration: none; /* Remove underlines from links */
+	color: inherit; /* Inherit the color from the parent element */
+}
+
+#nav-bar-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	margin-left: 6rem;
+	margin-right: 6rem;
+}
+
+#instructions,
+#login,
+#logout,
+#register {
+	color: white;
+}
+
+.login-instructions {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: inherit;
+	margin-top: 2rem;
+}
+
+.text-box {
+	padding: 20px;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	text-align: center;
+}
+
+.login-instructions p {
+	color: #746d6d;
+}

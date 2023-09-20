@@ -1,0 +1,93 @@
+<!-- prettier-ignore -->
+{% extends "layout.html" %}
+
+<!-- prettier-ignore -->
+{% block main %}
+<div class="table-top">
+	<div class="search-items">
+			<input type="text" id="search-box" placeholder="Search... (Name)" />
+			<button class="btn btn-success" id="search-button">Search</button>
+			<button class="btn btn-secondary" id="add-button">Add Item</button>
+			<div id="last-updated-container">
+					<div id="last-updated">{{ last_updated }}</div>
+			</div>
+	</div>
+	<div class="alert-items">
+		<div id="liveAlertPlaceholder" class="custom-alert"></div>
+	</div>
+</div>
+</div>
+<div class="table-div bdr">
+	<table
+		id="table"
+		class="table table-striped table-dark table-hover table-bordered"
+	>
+		<thead>
+			<tr>
+				<th scope="col" class="item-number-column">
+					<a href="#" class="sortable" data-column="item-number">Item</a>
+				</th>
+				<th scope="col" class="item-date-column">
+					<a href="#" class="sortable" data-column="item-number">Date</a>
+				</th>
+				<th scope="col" class="item-name-column">
+					<a href="#" class="sortable" data-column="item-name">Name</a>
+				</th>
+				<th scope="col" class="cost-per-item-column">
+					<a href="#" class="sortable" data-column="item-name">Cost Per Item</a>
+				</th>
+				<th scope="col" class="current-price-column">
+					<a href="#" class="sortable" data-column="current-price"
+						>Current Price</a
+					>
+				</th>
+				<th scope="col" class="number-of-items-column">
+					<a href="#" class="sortable" data-column="number-of-items">
+						# of Items</a
+					>
+				</th>
+				<th scope="col" class="total-cost-column">
+					<a href="#" class="sortable" data-column="total-cost">Total Cost</a>
+				</th>
+				<th scope="col" class="total-value-column">
+					<a href="#" class="sortable" data-column="total-value">Total Value</a>
+				</th>
+				<th scope="col" class="total-return-dollar-column">
+					<a href="#" class="sortable" data-column="total-return-dollar"
+						>Total Return $</a
+					>
+				</th>
+				<th scope="col" class="total-return-percent-column">
+					<a href="#" class="sortable" data-column="total-return-percent"
+						>Total Return %</a
+					>
+				</th>
+				<th scope="col" class="item-link-column">Link</th>
+				<th scope="col" class="action-column"></th>
+			</tr>
+		</thead>
+		<tbody class="table-group-divider">
+			<!-- Data will be populated here -->
+		</tbody>
+	</table>
+</div>
+<div class="table-div bdr" id="table-totals-div">
+	<table
+		id="table-totals"
+		class="table table-striped table-dark table-hover table-bordered"
+	>
+		<thead>
+			<tr>
+				<th scope="col" class="total-total-items-column">TOTAL ITEMS</th>
+				<th scope="col" class="total-total-cost-column">TOTAL COST</th>
+				<th scope="col" class="total-total-value-column">TOTAL VALUE</th>
+				<th scope="col" class="total-total-return-$-column">TOTAL RETURN $</th>
+				<th scope="col" class="total-total-return-%-column">TOTAL RETURN %</th>
+			</tr>
+		</thead>
+		<tbody class="table-group-divider" id="table-total-body">
+			<!-- Data will be populated here -->
+		</tbody>
+	</table>
+</div>
+{% endblock %}
