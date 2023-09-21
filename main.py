@@ -13,6 +13,8 @@ app.config["SESSION_TYPE"] = "filesystem"
 # Set a secret key for session management
 app.secret_key = secret_key
 
+# Create an ASGI application object
+asgi_app = app
 
 @app.after_request
 def after_request(response):
@@ -326,7 +328,3 @@ def add_item():
     except Exception as e:
         print("Error")
         return {'message': f'Error {e}'}, 500
-
-
-if __name__ == '__main__':
-    app.run()
