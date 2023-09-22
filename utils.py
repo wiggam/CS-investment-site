@@ -120,7 +120,6 @@ def update_inventory_prices():
     links_query = "SELECT DISTINCT item_link FROM inventory"
     unique_links = db_select(links_query)
 
-    counter = 0
     for link in unique_links:
         link = link['item_link']
         new_price = get_price(link)
@@ -131,8 +130,6 @@ def update_inventory_prices():
         db_update(update_query, update_params)
 
         time.sleep(4.5)  # dont over use API or will get timed out
-        counter += 1
-        print(counter)
 
     # update total value, return $ and %
     items_query = "SELECT * FROM inventory"
@@ -160,8 +157,9 @@ def update_inventory_prices():
 
     est_timezone = datetime.timezone(datetime.timedelta(hours=-5))
     est_time = datetime.datetime.now(est_timezone)
+    update_text = ''
     with open('db_last_updated.txt', 'w') as file:
-        file.write(
-            f"Database was last updated at {est_time.strftime('%Y-%m-%d %H:%M:%S')} EST")
+        update_text = f"Database was last updated at {est_time.strftime('%Y-%m-%d %H:%M:%S')} EST"
+        file.write(update_text)
 
-    return 0
+    return print(update_text)
