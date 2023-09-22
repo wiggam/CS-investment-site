@@ -326,7 +326,3 @@ def add_item():
     except Exception as e:
         print("Error")
         return {'message': f'Error {e}'}, 500
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
