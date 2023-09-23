@@ -36,11 +36,7 @@ def index():
 
 @app.route('/instructions')
 def instructions():
-
-    user_authenticated = False
-    if session['user_id']:
-        user_authenticated = True
-
+    user_authenticated = 'user_id' in session
     return render_template('instructions.html', user_authenticated=user_authenticated)
 
 
