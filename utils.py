@@ -155,7 +155,7 @@ def update_inventory_prices():
         if result != 0:
             return 'Error updating db'
 
-    est_timezone = datetime.timezone(datetime.timedelta(hours=-5))
+    est_timezone = datetime.timezone(datetime.timedelta(hours=-4))
     est_time = datetime.datetime.now(est_timezone)
     update_text = ''
     with open('db_last_updated.txt', 'w') as file:
