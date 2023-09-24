@@ -129,7 +129,7 @@ def update_inventory_prices():
         update_params = (new_price, link)
         db_update(update_query, update_params)
 
-        time.sleep(4.5)  # dont over use API or will get timed out
+        time.sleep(6)  # dont over use API or will get timed out
 
     # update total value, return $ and %
     items_query = "SELECT * FROM inventory"
